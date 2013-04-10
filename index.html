@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>RBotson IRC Logs</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid" ng-controller="LogTabsCtrl">
+    <div class="messages">
+      <h1>RBotson IRC logs</h1>
+      <tabs>
+        <pane class="irc" ng-repeat="(key, val) in panes" heading="{{key}}" scroll-glue>
+          <div class="message_row" ng-repeat="item in val.messages">
+            <span class="time">[{{item.timestamp | formatUnixTimestamp}}]</span>
+            <span class="user" style="width: {{val.userWidth * 8}}px;" ng-bind-html-unsafe="item.user"></span>
+            <span class="message" ng-bind-html-unsafe="item.message"></span>
+          </div>
+        </pane>
+      </tabs>
+    </div>
+
+    <div class="container-fluid" id="footer">
+      <div class="input-append input-block-level" id="inputarea">
+        <input type="text"/>
+        <span class="add-on btn">Send</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-ui/ui-bootstrap-tpls-0.2.0.js"></script>
+  <script src="lib/angular-cornercouch.js"></script>
+  <script src="lib/scrollglue.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/node-tokenizer.js"></script>
+  <script src="js/irc_tools.js"></script>
+</body>
+</html>

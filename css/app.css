@@ -1,0 +1,56 @@
+/* app css stylesheet */
+
+html,body { height: 100%; }
+
+.messages {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    right: 8px;
+    bottom: 38px;
+}
+
+#footer {
+    background-color: #f5f5f5;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+}
+#footer > div { margin: 4px 0; }
+
+.irc {
+    font-family:monospace;
+    padding-bottom: 1em;
+    overflow:auto;
+    position: absolute;
+    top: 118px;
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+}
+.message_row {
+    display:block;
+}
+
+.message_row .user {
+    display: inline-block;
+    text-align: right;
+    padding-right: .5em;
+    border-right: 1px solid #959595;
+    margin-right: .5em;
+}
+#inputarea {
+    display:table;
+    width:100%;
+}
+#inputarea > input {
+    display:table-cell;
+    width:100%;
+}
+#inputarea .add-on {
+    display:table-cell;
+    width: 4em;
+    padding-left: 1em;
+}
