@@ -17,8 +17,8 @@ var friendlifyDbRows = function dbToPanes(rows) {
     return output;
 };
 var LogTabsCtrl = function ($scope, cornercouch) {
-    $scope.database = cornercouch("http://localhost:5984", "JSONP").getDB("rbotson_irc_log");
-    $scope.database.query("past24hrs", "past24hrs", {include_docs:true, descending:true}).then(function (){
+    $scope.database = cornercouch("http://couchdb.0x9d.com", "JSONP").getDB("rbotson_irc_log");
+    $scope.database.query("past24hrs", "past24hrs", {include_docs:true, descending:false}).then(function (){
         $scope.panes = friendlifyDbRows($scope.database.rows);
     });
     // $scope.database.$watch("rows", function(oldVal, newVal){
