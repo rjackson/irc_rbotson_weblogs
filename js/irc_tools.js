@@ -248,6 +248,11 @@ function dataParse(data){
         case "KILL":
             message = format("THE ALLLL~~MIGHTY LORD, FROM THE HEAVENS ABOVE, STRIKES DOWN THE NONBELIEVER.  BYE %s (%s)", actor.name, args[0]);
             break;
+
+        case "QUIT":
+            message = htmlColour("DarkRed", format("%s has quit (%s)", actor.name, args[0]));
+            user = htmlColour("DarkRed", rawUser);
+            break;
     }
     return {
         timestamp: data.timestamp,
